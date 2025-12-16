@@ -1,13 +1,15 @@
 package database;
 
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Properties;
 
 public class DatabaseConnection {
     // Configurações (Hardcoded para dev, em produção usaria variáveis de ambiente)
-    private static final String URL = "jdbc:postgresql://localhost:5432/kosmos_db";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "Gabrielc2006";
+    private static String URL;
+    private static String USER;
+    private static String PASSWORD;
 
     // A variável estática que guarda a ÚNICA conexão (Singleton)
     private static Connection instance;
@@ -15,6 +17,9 @@ public class DatabaseConnection {
     private DatabaseConnection(){}
 
     public static Connection getInstance() {
+        if (URL == null || USER == null || PASSWORD == null) {
+            loadConfig();
+        }
         try {
             // Só conecta se não existir conexão ou se ela caiu
             if (instance == null || instance.isClosed()) {
@@ -27,5 +32,25 @@ public class DatabaseConnection {
             e.printStackTrace();
         }
         return instance;
+    }
+
+    private static void loadConfig() {
+        Properties prop = new Properties();
+        String configFileName = "config.properties";
+
+        try (InputStream input = DatabaseConnection.class.getClassLoader().getResourceAsStream(configFileName)) {
+            if (input == null) {
+                System.err.println("Arquivo de configuração não encontrado no Classpath!");
+                return;
+            }
+            prop.load(input);
+            URL = prop.getProperty("db.url");
+            USER = prop.getProperty("db.user");
+            PASSWORD = prop.getProperty("db.password");
+
+            System.out.println("Configuração carregada..");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
