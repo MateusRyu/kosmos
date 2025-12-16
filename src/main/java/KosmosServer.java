@@ -88,6 +88,19 @@ public class KosmosServer {
         out.write(response.getBytes());
     }
 
+
+    private static void sendRedirectResponse(OutputStream out, String newLocation) throws IOException {
+        String responseHttp =
+                "HTTP/1.1 302 Found\r\n"
+                + "Location: " + newLocation + "\r\n"
+                + "Content-Type: text/html\r\n"
+                + "Content-Length: 0\r\n"
+                + "\r\n";
+
+        out.write(responseHttp.getBytes(StandardCharsets.UTF_8));
+    }
+
+
     public String getContentType(String filePath) {
         String[] filePathArray = filePath.split("\\.");
 
