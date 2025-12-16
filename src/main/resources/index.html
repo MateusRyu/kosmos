@@ -1,243 +1,246 @@
 <!DOCTYPE html>
-<html lang="pt-BR"> 
-  <head> 
-    <meta charset="UTF-8" /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1" /> <title>Kosmos - Universo Criativo</title> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> <link rel="stylesheet" href="home.css" /> <script src="home.js" defer></script> 
-    <title>Kosmos - Universo Criativo</title> 
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="home.css" /> 
-    <script src="home.js" defer></script> 
-  </head>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <title>Kosmos - Universo Criativo</title> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> <link rel="stylesheet" href="home.css" /> <script src="home.js" defer></script>
+    <title>Kosmos - Universo Criativo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css" />
+    <script src="home.js" defer></script>
+</head>
 
 <body>
-      <!-- Menu -->
-      <header class="header">
-        <div class="logo">Kosmos</div>
+<!-- Menu -->
+<header class="header">
+    <div class="logo">Kosmos</div>
 
-        <!-- Menu desktop -->
-        <div class="nav-menu-wrapper">
-          <nav class="nav-menu" aria-label="Menu principal">
+    <!-- Menu desktop -->
+    <div class="nav-menu-wrapper">
+        <nav class="nav-menu" aria-label="Menu principal">
             <a href="#divulgue">Divulgue</a>
             <a href="#comentarios">Comentários</a>
             <a href="#loginWrapper">Login</a>
             <a href="#contato">Fale Conosco</a>
-          </nav>
+        </nav>
+    </div>
+
+    <!-- Menu mobile -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
+
+<nav id="mobileMenu" class="mobile-menu" aria-hidden="true"></nav>
+
+<!--Video principal-->
+<main class="main-section">
+
+    <h1 class="main-title">O universo criativo está aqui.</h1>
+    <button class="btn-entre" onclick="location.href='#loginWrapper';">ENTRE AQUI!</button>
+
+    <div class="image-wrapper">
+
+        <video class="video-bg" autoplay muted loop playsinline>
+            <source src="imagesHome/gif_home.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos em HTML5.
+        </video>
+
+        <div class="image-text-overlay">
+            <h2>Kosmos<br>Universo da arte</h2>
+            <p>Conheça nosso trabalho e entre nessa jornada de outro mundo com a gente!</p>
+            <a href="about/about.html" class="btn-learn-more">Saiba mais!</a>
         </div>
 
-        <!-- Menu mobile -->
-        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </header>
+    </div>
 
-      <nav id="mobileMenu" class="mobile-menu" aria-hidden="true"></nav>
-
-      <!--Video principal-->
-      <main class="main-section">
-
-          <h1 class="main-title">O universo criativo está aqui.</h1>
-          <button class="btn-entre" onclick="location.href='#loginWrapper';">ENTRE AQUI!</button>
-
-          <div class="image-wrapper">
-              
-              <video class="video-bg" autoplay muted loop playsinline>
-                  <source src="imagesHome/gif_home.mp4" type="video/mp4">
-                  Seu navegador não suporta vídeos em HTML5.
-              </video>
-
-              <div class="image-text-overlay">
-                  <h2>Kosmos<br>Universo da arte</h2>
-                  <p>Conheça nosso trabalho e entre nessa jornada de outro mundo com a gente!</p>
-                  <a href="about/about.html" class="btn-learn-more">Saiba mais!</a>
-              </div>
-
-          </div>
-
-          <!--Logos de trusted by-->
-      <div class="trusted-by"> 
+    <!--Logos de trusted by-->
+    <div class="trusted-by">
         <p>Apoiado por:</p>
-          <div class="logos"> 
-            <img src="imagesHome/jalauniversity.png" alt="Jala University" /> 
+        <div class="logos">
+            <img src="imagesHome/jalauniversity.png" alt="Jala University" />
             <img src="imagesHome/jalasoft.png" alt="JalaSoft" />
-            <img src="imagesHome/lorem.png" alt="Logoipsum" /> 
-            <img src="imagesHome/ipsum.png" alt="Logoipsum" /> 
-            <img src="imagesHome/slogan.png" alt="Logoipsum" /> 
-          </div> 
-      </div>
+            <img src="imagesHome/lorem.png" alt="Logoipsum" />
+            <img src="imagesHome/ipsum.png" alt="Logoipsum" />
+            <img src="imagesHome/slogan.png" alt="Logoipsum" />
+        </div>
+    </div>
 
-      <!--Carrossel de divulgação-->
-          <section id="divulgue" class="benefits-section">
+    <!--Carrossel de divulgação-->
+    <section id="divulgue" class="benefits-section">
 
-            <h2 class="benefits-title">Divulgue seu trabalho!</h2>
-            <p class="benefits-subtitle">Área segura para artistas compartilharem seus projetos e itens para aluguel e/ou venda!</p>
+        <h2 class="benefits-title">Divulgue seu trabalho!</h2>
+        <p class="benefits-subtitle">Área segura para artistas compartilharem seus projetos e itens para aluguel e/ou venda!</p>
 
-            <div class="benefits-image-wrapper">
+        <div class="benefits-image-wrapper">
 
-              <div class="benefit-carousel">
-                  <button class="carousel-btn left" id="btnPrev">&#10094;</button>
+            <div class="benefit-carousel">
+                <button class="carousel-btn left" id="btnPrev">&#10094;</button>
 
-                  <div class="carousel-track-wrapper">
+                <div class="carousel-track-wrapper">
                     <div class="carousel-track" id="carousel-track">
 
-                        <div class="carousel-item"> 
-                          <div class="circle-icon">🌿</div> 
-                          <h3>Amplie sua Visibilidade</h3> 
-                          <p>Mostre suas produções em um ambiente feito para destacar o talento artístico. 
-                            Alcance novos públicos e seja descoberto por apreciadores e compradores.</p> 
+                        <div class="carousel-item">
+                            <div class="circle-icon">🌿</div>
+                            <h3>Amplie sua Visibilidade</h3>
+                            <p>Mostre suas produções em um ambiente feito para destacar o talento artístico.
+                                Alcance novos públicos e seja descoberto por apreciadores e compradores.</p>
                         </div>
 
                         <div class="carousel-item">
-                          <div class="circle-icon">🌐</div> 
-                          <h3>Conecte-se com o Mundo</h3> 
-                          <p>Interaja com outros artistas, descubra novos estilos e colabore em projetos criativos. 
-                            Nossa plataforma é uma ponte entre culturas e expressões artísticas.</p> 
+                            <div class="circle-icon">🌐</div>
+                            <h3>Conecte-se com o Mundo</h3>
+                            <p>Interaja com outros artistas, descubra novos estilos e colabore em projetos criativos.
+                                Nossa plataforma é uma ponte entre culturas e expressões artísticas.</p>
                         </div>
 
-                        <div class="carousel-item"> 
-                          <div class="circle-icon">💬</div> 
-                          <h3>Comunique-se com Facilidade</h3> 
-                          <p>Envie mensagens diretas, participe de grupos e compartilhe ideias em tempo real. 
-                            Fortaleça sua rede e crie novas oportunidades.</p> 
+                        <div class="carousel-item">
+                            <div class="circle-icon">💬</div>
+                            <h3>Comunique-se com Facilidade</h3>
+                            <p>Envie mensagens diretas, participe de grupos e compartilhe ideias em tempo real.
+                                Fortaleça sua rede e crie novas oportunidades.</p>
                         </div>
 
-                        <div class="carousel-item"> 
-                          <div class="circle-icon">✨</div> 
-                          <h3>Venda e Valorize sua Arte</h3> 
-                          <p>Publique suas obras para venda ou aluguel com segurança. 
-                          Administre seu portfólio e acompanhe suas transações em um só lugar.</p> 
+                        <div class="carousel-item">
+                            <div class="circle-icon">✨</div>
+                            <h3>Venda e Valorize sua Arte</h3>
+                            <p>Publique suas obras para venda ou aluguel com segurança.
+                                Administre seu portfólio e acompanhe suas transações em um só lugar.</p>
                         </div>
 
                     </div>
-                  </div>
+                </div>
 
-                  <button class="carousel-btn right" id="btnNext">&#10095;</button>
-
-              </div>
-
-              <img class="benefits-image" src="imagesHome/galaxia.jpg">
+                <button class="carousel-btn right" id="btnNext">&#10095;</button>
 
             </div>
 
-          </section>
+            <img class="benefits-image" src="imagesHome/galaxia.jpg">
 
-          <!--Comentários dos usuários-->
-      <section id="comentarios" class="comments-section">
-          <h2 class="comments-title">O que dizem sobre nós</h2>
+        </div>
 
-          <div class="comments-carousel" id="commentsCarousel">
-              <div class="comments-track">
-                  
-                  <div class="comment-item">
-                      <img src="imagesHome/pfpimages/image1.jpg" class="comment-pic">
-                      <p>"A plataforma me ajudou a divulgar meu trabalho para centenas de pessoas!"</p>
-                      <h4>— Carlos Mendes</h4>
-                  </div>
+    </section>
 
-                  <div class="comment-item">
-                      <img src="imagesHome/pfpimages/image2.jpg" class="comment-pic">
-                      <p>"Finalmente um lugar onde artistas realmente podem crescer juntos."</p>
-                      <h4>— Ana Costa</h4>
-                  </div>
+    <!--Comentários dos usuários-->
+    <section id="comentarios" class="comments-section">
+        <h2 class="comments-title">O que dizem sobre nós</h2>
 
-                  <div class="comment-item">
-                      <img src="imagesHome/pfpimages/image3.jpg" class="comment-pic">
-                      <p>"Muito intuitivo, fácil de usar e com uma comunidade incrível!"</p>
-                      <h4>— Júlia Rocha</h4>
-                  </div>
+        <div class="comments-carousel" id="commentsCarousel">
+            <div class="comments-track">
 
-                  <div class="comment-item">
-                      <img src="imagesHome/pfpimages/image4.jpg" class="comment-pic">
-                      <p>"Consegui vender minha primeira obra usando a Kosmos! Recomendo."</p>
-                      <h4>— Roberto Lima</h4>
-                  </div>
+                <div class="comment-item">
+                    <img src="imagesHome/pfpimages/image1.jpg" class="comment-pic">
+                    <p>"A plataforma me ajudou a divulgar meu trabalho para centenas de pessoas!"</p>
+                    <h4>— Carlos Mendes</h4>
+                </div>
 
-                  <div class="comment-item">
-                      <img src="imagesHome/pfpimages/image1.jpg" class="comment-pic">
-                      <p>"A plataforma me ajudou a divulgar meu trabalho para centenas de pessoas!"</p>
-                      <h4>— Carlos Mendes</h4>
-                  </div>
+                <div class="comment-item">
+                    <img src="imagesHome/pfpimages/image2.jpg" class="comment-pic">
+                    <p>"Finalmente um lugar onde artistas realmente podem crescer juntos."</p>
+                    <h4>— Ana Costa</h4>
+                </div>
 
-                  <div class="comment-item">
-                      <img src="imagesHome/pfpimages/image2.jpg" class="comment-pic">
-                      <p>"Finalmente um lugar onde artistas realmente podem crescer juntos."</p>
-                      <h4>— Ana Costa</h4>
-                  </div>
+                <div class="comment-item">
+                    <img src="imagesHome/pfpimages/image3.jpg" class="comment-pic">
+                    <p>"Muito intuitivo, fácil de usar e com uma comunidade incrível!"</p>
+                    <h4>— Júlia Rocha</h4>
+                </div>
 
-              </div>
-          </div>
-      </section>
+                <div class="comment-item">
+                    <img src="imagesHome/pfpimages/image4.jpg" class="comment-pic">
+                    <p>"Consegui vender minha primeira obra usando a Kosmos! Recomendo."</p>
+                    <h4>— Roberto Lima</h4>
+                </div>
 
-      <!--Formulário de Login e Registro-->
-      <section class="login-wrapper" id="loginWrapper">
+                <div class="comment-item">
+                    <img src="imagesHome/pfpimages/image1.jpg" class="comment-pic">
+                    <p>"A plataforma me ajudou a divulgar meu trabalho para centenas de pessoas!"</p>
+                    <h4>— Carlos Mendes</h4>
+                </div>
+
+                <div class="comment-item">
+                    <img src="imagesHome/pfpimages/image2.jpg" class="comment-pic">
+                    <p>"Finalmente um lugar onde artistas realmente podem crescer juntos."</p>
+                    <h4>— Ana Costa</h4>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--Formulário de Login e Registro-->
+    <section class="login-wrapper" id="loginWrapper">
 
         <div class="form-container">
 
-      <div class="form-box active" id="loginBox">
-          <h1 class="login-title">Login</h1>
+            <form action="/api/user/login"  method="post"  class="form-box active" id="loginBox">
+                <h1 class="login-title">Login</h1>
 
-          <p class="login-text">Acesse sua conta para divulgar suas 
-              criações, montar seu portfólio e interagir com artistas
-              e apreciadores do mundo todo.</p>
+                <p class="login-text">Acesse sua conta para divulgar suas
+                    criações, montar seu portfólio e interagir com artistas
+                    e apreciadores do mundo todo.</p>
 
-          <label>Email</label>
-          <input type="email" id="loginEmail" placeholder="Digite seu email" required>
+                <label>Email</label>
+                <input type="email" id="loginEmail" placeholder="Digite seu email" name="email" required>
 
-          <label>Senha</label>
-          <input type="password" id="loginSenha" placeholder="Digite sua senha" required>
+                <label>Senha</label>
+                <input type="password" id="loginSenha" placeholder="Digite sua senha" name="password" required>
 
-          <button class="btn-login-clean" id="btnLogin">LOGIN</button>
+                <button class="btn-login-clean" id="btnLogin">LOGIN</button>
 
-          <p class="new-here">Não tem conta?</p>
-          <a id="btnGoRegister" class="btn-create">Criar conta</a>
-      </div>
+                <p class="new-here">Não tem conta?</p>
+                <a id="btnGoRegister" class="btn-create">Criar conta</a>
+            </form>
 
-      <div class="form-box" id="registerBox">
-          <h1 class="login-title">Criar Conta</h1>
+            <form action="/api/user/create"  method="post" class="form-box" id="registerBox">
+                <h1 class="login-title">Criar Conta</h1>
 
-          <p class="login-text">Crie sua conta para compartilhar seu talento, conectar-se com outros criadores e explorar novas oportunidades no universo artístico.</p>
+                <p class="login-text">Crie sua conta para compartilhar seu talento, conectar-se com outros criadores e explorar novas oportunidades no universo artístico.</p>
 
-          <label>Nome</label>
-          <input type="text" id="regNome" placeholder="Digite seu nome completo" required>
+                <label>Nome</label>
+                <input type="text" id="regNome" placeholder="Digite seu nome completo" name="name" required>
 
-          <label>Email</label>
-          <input type="email" id="regEmail" placeholder="Digite seu email" required>
+                <label>Email</label>
+                <input type="email" id="regEmail" placeholder="Digite seu email" name="email" required>
 
-          <label>Senha</label>
-          <input type="password" id="regSenha" placeholder="Crie uma senha" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="A senha deve conter no mínimo 8 caracteres, incluindo letras e números, e não pode ter caracteres especiais.">
+                <label>Username</label>
+                <input type="text" id="regUsername" placeholder="Digite seu nome de usuário" name="username" required>
 
-          <label>Confirmar Senha</label>
-          <input type="password" id="regConfirmSenha" placeholder="Confirme sua senha" required>
+                <label>Senha</label>
+                <input type="password" id="regSenha" placeholder="Crie uma senha"  name="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="A senha deve conter no mínimo 8 caracteres, incluindo letras e números, e não pode ter caracteres especiais.">
 
-          <button class="btn-login-clean" id="btnRegister">Cadastrar</button>
+                <label>Confirmar Senha</label>
+                <input type="password" id="regConfirmSenha" placeholder="Confirme sua senha" required>
 
-          <p class="new-here">Já tem conta?</p>
-          <a id="btnGoLogin" class="btn-create">Entrar</a>
-      </div>
+                <button class="btn-login-clean" id="btnRegister">Cadastrar</button>
 
-          </div>
+                <p class="new-here">Já tem conta?</p>
+                <a id="btnGoLogin" class="btn-create">Entrar</a>
+            </form>
+
+        </div>
 
         </div>
 
         <div class="login-image">
-          <img src="imagesHome/loginimage.jpeg">
+            <img src="imagesHome/loginimage.jpeg">
         </div>
 
-      </section>
+    </section>
 
-      <!--Rodapé-->
-      <footer id="contato" class="footer">
-          <h2>Fale Conosco</h2>
+    <!--Rodapé-->
+    <footer id="contato" class="footer">
+        <h2>Fale Conosco</h2>
 
-          <p>Email: suporte@kosmos.com</p>
-          <p>Instagram: @kosmos.art</p>
-          <p>Whatsapp: (11) 90000-0000</p>
+        <p>Email: suporte@kosmos.com</p>
+        <p>Instagram: @kosmos.art</p>
+        <p>Whatsapp: (11) 90000-0000</p>
 
-          <p class="copy">© 2025 Kosmos - Todos os direitos reservados.</p>
-      </footer>
-    </main>
-  </body>
+        <p class="copy">© 2025 Kosmos - Todos os direitos reservados.</p>
+    </footer>
+</main>
+</body>
 </html>

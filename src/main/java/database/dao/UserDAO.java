@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class UserDAO {
 
-    public void registerUser(String username, String name, String lastName, String email, String password, String role) {
+    public boolean registerUser(String username, String name, String lastName, String email, String password, String role) {
         // O SQL com coringas (?) para segurança
         String sql = "INSERT INTO users (username, name, last_name, email, password, role) VALUES (?, ?, ?, ?, ?, ?)";
 
@@ -30,7 +30,10 @@ public class UserDAO {
 
         } catch (SQLException e) {
             System.err.println("UserDAO: Erro ao registrar. Detalhes: " + e.getMessage());
+            return false;
         }
+
+        return true;
     }
 
     public int buscarIdPorUsuario(String username) {
@@ -59,6 +62,23 @@ public class UserDAO {
 
         // Se chegou aqui, não achou ninguém. Retorna -1.
         return -1;
+    }
+
+    public String buscarSenhaPorEmail(String email) {
+        String sql = "SELECT password FROM users WHERE email = ?";
+
+        try (Connection conn = DatabaseConnection.getInstance();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, email);
+            ResultSet tabelaResultado = stmt.executeQuery();
+            if (tabelaResultado.next()) {
+                return tabelaResultado.getString("password");
+            }
+        } catch (SQLException e) {
+            System.err.println("Erro ao buscar: " + e.getMessage());
+        }
+
+        return "";
     }
 
     public boolean validarLogin(String email, String password) {

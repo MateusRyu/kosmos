@@ -2,6 +2,9 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
+import java.security.NoSuchAlgorithmException;
 
 public class LoginRoute {
 
@@ -16,28 +19,35 @@ public class LoginRoute {
             }
         }
 
-        // Lê corpo
         char[] body = new char[contentLength];
         in.read(body);
 
-        JSONObject json = new JSONObject(new String(body));
+        String[] rawData = new String(body).split("&");
 
-        String email = json.getString("email");
-        String senha = json.getString("senha");
+        String email = "";
+        String password = "";
 
-        boolean ok = email.equals("teste@teste.com") && senha.equals("123456");
+        for (String dataString : rawData) {
+            String[] data = dataString.split("=");
 
-        String resposta = ok ?
-                "{\"status\":\"ok\"}" :
-                "{\"status\":\"erro\"}";
+            String value = URLDecoder.decode(data[1], StandardCharsets.UTF_8.name());
 
-        String responseHttp =
-                "HTTP/1.1 200 OK\r\n" +
-                        "Content-Type: application/json\r\n" +
-                        "Content-Length: " + resposta.length() + "\r\n" +
-                        "\r\n" +
-                        resposta;
+            switch (data[0]) {
+                case "email" -> email = value;
+                case "password" -> password = value;
+            }
+        }
 
-        out.write(responseHttp.getBytes());
+        com.kosmos.dao.UserDAO userDAO = new com.kosmos.dao.UserDAO();
+        String storedPassword = "";
+        storedPassword = userDAO.buscarSenhaPorEmail(email);
+
+        if (PasswordHasher.verifyPassword(password, storedPassword)) {
+            System.out.println("Login successful: " + email);
+            KosmosServer.sendRedirectResponse(out, "/main/main.html");
+        } else {
+            System.out.println("Login failed: " + email);
+            KosmosServer.sendRedirectResponse(out, "/");
+        }
     }
 }

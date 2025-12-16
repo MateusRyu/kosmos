@@ -8,17 +8,6 @@ const btnLogin = document.getElementById("btnLogin");
 const loginEmail = document.getElementById("loginEmail");
 const loginSenha = document.getElementById("loginSenha");
 
-// Simulação de login simples
-btnLogin.addEventListener("click", () => {
-    const email = loginEmail.value;
-    const senha = loginSenha.value;
-
-    if (email === "usuario@kosmos.com" && senha === "senha123") {
-        window.location.href = "main/main.html";
-    } else {
-        alert("Credenciais inválidas. Tente novamente.");
-    }
-});
 
 btnGoRegister.addEventListener("click", () => {
     wrapper.classList.add("register-mode");
