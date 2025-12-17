@@ -95,11 +95,23 @@ public class KosmosServer {
     }
 
 
-    private static void sendRedirectResponse(OutputStream out, String newLocation) throws IOException {
+    public static void sendRedirectResponse(OutputStream out, String newLocation) throws IOException {
         String responseHttp =
                 "HTTP/1.1 302 Found\r\n"
                 + "Location: " + newLocation + "\r\n"
                 + "Content-Type: text/html\r\n"
+                + "Content-Length: 0\r\n"
+                + "\r\n";
+
+        out.write(responseHttp.getBytes(StandardCharsets.UTF_8));
+    }
+
+    public static void sendRedirectResponse(OutputStream out, String newLocation, String[] cookie) throws IOException {
+        String responseHttp =
+                "HTTP/1.1 302 Found\r\n"
+                + "Location: " + newLocation + "\r\n"
+                + "Content-Type: text/html\r\n"
+                + "Set-Cookie: " + cookie[0] + "=" + cookie[1] + "; Max-Age=3600; Path=/; HttpOnly\r\n"
                 + "Content-Length: 0\r\n"
                 + "\r\n";
 
