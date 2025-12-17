@@ -81,11 +81,17 @@ public class KosmosServer {
     }
 
     private void sendNotFound(OutputStream out) throws IOException {
-        String response = "HTTP/1.1 404 Not Found\r\n"
-                + "Conntent-Type: text/plain\r\n"
-                + "Content-Length: 9\r\n\r\n"
+        Path filePath = Paths.get(resourcePath.toString(), "/error/404.html");
+        byte[] fileBytes = Files.readAllBytes(filePath);
+
+        String headers = "HTTP/1.1 404 Not Found\r\n"
+                + "Content-Type: text/html; charset=utf-8\r\n"
+                + "Content-Length: " + fileBytes.length + "\r\n"
+                + "\r\n"
                 + "Not Found";
-        out.write(response.getBytes());
+
+        out.write(headers.getBytes(StandardCharsets.UTF_8));
+        out.write(fileBytes);
     }
 
 
