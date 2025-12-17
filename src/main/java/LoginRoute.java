@@ -12,7 +12,6 @@ public class LoginRoute {
         String line;
         int contentLength = 0;
 
-        // Lê headers
         while (!(line = in.readLine()).isEmpty()) {
             if (line.startsWith("Content-Length:")) {
                 contentLength = Integer.parseInt(line.split(":")[1].trim());
@@ -44,7 +43,8 @@ public class LoginRoute {
 
         if (PasswordHasher.verifyPassword(password, storedPassword)) {
             System.out.println("Login successful: " + email);
-            KosmosServer.sendRedirectResponse(out, "/main/main.html");
+            String[] sessionCookie = {"sessionId", SessionManager.createSession(email)};
+            KosmosServer.sendRedirectResponse(out, "/main/main.html", sessionCookie);
         } else {
             System.out.println("Login failed: " + email);
             KosmosServer.sendRedirectResponse(out, "/");
